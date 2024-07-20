@@ -28,7 +28,7 @@ if exist "%directoryPath%" (
     echo El directorio %directoryPath% no existe.
 )
 
-echo retire el pendrive, para reiniciar el sitema oprima enter
+echo retire el pendrive, para reiniciar el sistema oprima enter
 pause
 :: Reiniciar el sistema
 shutdown /r /f /t 0
