@@ -15,8 +15,9 @@ set "directoryPath=C:\Windows\System32\drivers\CrowdStrike"
 if exist "%directoryPath%" (
     :: Buscar y eliminar el archivo que coincide con el patrón
     for %%F in ("%directoryPath%\C-00000291*.sys") do (
-        del /f "%%F"
-        echo Archivo eliminado: %%F
+        del /f C:\Windows\System32\drivers\CrowdStrike\C-00000291*.sys
+        ren C:\Windows\System32\drivers\CrowdStrike C:\Windows\System32\drivers\CrowdStrike.old
+        echo Archivo eliminado exitosamente!!!
     )
     
     :: Comprobar si se eliminaron archivos
@@ -27,5 +28,7 @@ if exist "%directoryPath%" (
     echo El directorio %directoryPath% no existe.
 )
 
+echo retire el pendrive, para reiniciar el sitema oprima enter
+pause
 :: Reiniciar el sistema
-shutdown /r /t 0
+shutdown /r /f /t 0
